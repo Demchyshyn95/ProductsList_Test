@@ -4,6 +4,7 @@
 }
 .main{
     background: silver;
+    min-height:1024px ;
     display: flex;
     flex: 1;
     flex-direction: column;

@@ -13,8 +13,8 @@ const Form = ({ newProduct, onSave, onchange}) => {
                        name='product'
                        onChange={onchange}
                        placeholder='Enter new product'
-                       ref={register}
-                />
+                       ref={ register({ required: true }) }
+                       />
 
                 <label>Priority:</label>
                 <select

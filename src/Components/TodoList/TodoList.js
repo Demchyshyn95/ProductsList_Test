@@ -13,13 +13,13 @@ const TodoList = () => {
 
     const {register, handleSubmit} = useForm();
 
-    const onSave = (item) => {
+    const onSave = (item) => {debugger
         setNewProduct('');
         const isProduct = products.find(el => el.product === item.product);
         if (isProduct) {
             return;
         }
-        const newArray = [...products, item].sort((a, b) => a.status < b.status ? 1 : -1);
+        const newArray = [...products, item]
         newArray.sort((a, b) => a - b);
         setProducts(newArray);
         localStorage.setItem(item.product, JSON.stringify(item));
@@ -48,7 +48,7 @@ const TodoList = () => {
             }
             return el;
         })
-            .sort((a, b) => a.status < b.status ? 1 : -1).sort((a, b) => a - b)
+            .sort((a, b) => a.status < b.status ? 1 : -1)
         setProducts(newProducts);
     }
 
@@ -62,7 +62,7 @@ const TodoList = () => {
     }
     const filter = ({filterStatus}) => {
         if (filterStatus === 'all') {
-            setFilter([...products])
+            setFilter(null)
             return;
         }
         const filterProducts = [...products].filter(el => el.status === filterStatus)
